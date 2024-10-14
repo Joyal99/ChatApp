@@ -20,7 +20,14 @@ function Login() {
         pauseOnHover: true,
         draggable: true,
         theme: "dark",
-    }
+    };
+
+    useEffect(() => {
+        if (localStorage.getItem('chat-app-user')) {
+          navigate("/");
+        }
+        // eslint-disable-next-line
+      }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -44,13 +51,13 @@ function Login() {
         const { password, username} = values;
         if(password === "") {
             toast.error(
-                "Email and Password is Required to Login!", 
+                "Username and Password is Required to Login!", 
                 toastOptions
             );
             return false;
         }else if (username.length === "") {
             toast.error(
-                "Email and Password is Required to Login!", 
+                "Username and Password is Required to Login!", 
                 toastOptions
             ); 
             return false;

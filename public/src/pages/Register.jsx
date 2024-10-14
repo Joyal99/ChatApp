@@ -22,7 +22,15 @@ function Register() {
         pauseOnHover: true,
         draggable: true,
         theme: "dark",
-    }
+    };
+
+    useEffect(() => {
+        if (localStorage.getItem('chat-app-user')) {
+          navigate("/");
+        }
+        // eslint-disable-next-line
+      }, []);
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();

@@ -23,3 +23,19 @@ module.exports.register = async(req, res, next) => {
         next(ex);
     }
 };
+
+module.exports.login = async(req, res, next) => {
+    try {
+        const {username, password} = req.body;
+        const user = await User.findOne({ username});
+        if(!user)
+            return res.json({msg: "Incorrect username or password", status: false});
+        const isPasswordValid = await brcypt.compare(password, user.password); //checking password made from frontend and password stored in database
+        if(!isPasswordValid)
+            return res.json({msg: "Incorrect username or password", status: false});
+        delete user.password; //delete password from user object        
+        return res.json({status: true, user});  
+    } catch(ex) {
+        next(ex);
+    }
+};
