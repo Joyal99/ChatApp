@@ -1,4 +1,4 @@
 /public/*
 !/public/src
-/server/*
-!/server/index.js
+/server/node_modules
+/server/package-lock.json
