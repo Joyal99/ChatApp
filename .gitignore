@@ -1,2 +1,4 @@
-/public
-/server
+/public/
+/public/*
+/server/*
+!/server/index.js
