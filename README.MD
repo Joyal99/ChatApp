@@ -13,3 +13,5 @@ This project was developed to deepen my understanding of full-stack development,
 - [MongoDB](https://www.mongodb.com/docs/manual/administration/install-community/)
 
 Ensure both are installed, and MongoDB is running in the background.
+
+> More information to be added to README file in future commits.....
