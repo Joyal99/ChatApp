@@ -28,7 +28,6 @@ function Register() {
         if (localStorage.getItem('chat-app-user')) {
           navigate("/");
         }
-        // eslint-disable-next-line
       }, []);
 
 

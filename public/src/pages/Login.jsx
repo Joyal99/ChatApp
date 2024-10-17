@@ -26,7 +26,6 @@ function Login() {
         if (localStorage.getItem('chat-app-user')) {
           navigate("/");
         }
-        // eslint-disable-next-line
       }, []);
 
     const handleSubmit = async (event) => {
