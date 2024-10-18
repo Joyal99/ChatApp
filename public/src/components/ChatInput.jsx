@@ -7,13 +7,14 @@ import Picker from "emoji-picker-react";
 export default function ChatInput({ handleSendMsg }) {
   const [msg, setMsg] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+
   const handleEmojiPickerhideShow = () => {
     setShowEmojiPicker(!showEmojiPicker);
   };
 
   const handleEmojiClick = (emojiObject) => {
     let message = msg;
-    message += emojiObject.emoji; // The `emoji` property contains the actual emoji character
+    message += emojiObject.emoji; // Correct usage with emojiObject
     setMsg(message);
   };
 
@@ -30,13 +31,18 @@ export default function ChatInput({ handleSendMsg }) {
       <div className="button-container">
         <div className="emoji">
           <BsEmojiSmileFill onClick={handleEmojiPickerhideShow} />
-          {showEmojiPicker && <Picker onEmojiClick={handleEmojiClick} />}
+          {showEmojiPicker && (
+            <Picker
+              onEmojiClick={handleEmojiClick}
+              disableSearchBar={true} // Optional: Disabling search bar for cleaner UI
+            />
+          )}
         </div>
       </div>
-      <form className="input-container" onSubmit={(event) => sendChat(event)}>
+      <form className="input-container" onSubmit={sendChat}>
         <input
           type="text"
-          placeholder="type your message here"
+          placeholder="Type your message here..."
           onChange={(e) => setMsg(e.target.value)}
           value={msg}
         />
