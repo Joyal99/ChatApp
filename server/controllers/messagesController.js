@@ -1,3 +1,5 @@
+const MessageModel = require("../model/MessageModel");
+
 module.exports.addMessage = async(req, res, next) => {
     try{
         const {from, to, message} = req.body;
@@ -12,4 +14,24 @@ module.exports.addMessage = async(req, res, next) => {
         next(ex);
     }
 };
-module.exports.getAllMessage = async(req, res, next) => {};
+
+module.exports.getAllMessage = async(req, res, next) => {
+    try{
+        const {from, to} = req.body;
+        const messages = await MessageModel.find({
+            users: { 
+                $all: [from, to] 
+            },
+        })
+        .sort({updatedAt: 1});
+        const projectMessages = messages.map((msg) => {
+            return {
+                fromSelf: msg.sender.toString() === from,
+                message: msg.message.text,
+            };
+        });
+        res.json(projectMessages);
+    } catch(ex) {
+        next(ex);
+    }   
+};
