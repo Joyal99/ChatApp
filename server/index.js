@@ -14,10 +14,7 @@ app.use("/api/auth", userRoutes);
 app.use("/api/messages", messageRoute);
 
 mongoose
-    .connect(process.env.MONGO_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect(process.env.MONGO_URL)
     .then(() => {
         console.log("DB Connection Successfull");
     })
@@ -47,7 +44,7 @@ io.on("connection", (socket) => {
     socket.on("send-msg", (data) => {
         const sendUserSocket = onlineUsers.get(data.to);
         if(sendUserSocket){
-            socket.to(sendUserSocket).emit("msg-receive", data.msg);
+            socket.to(sendUserSocket).emit("msg-recieve", data.message);
         }
     });
 });

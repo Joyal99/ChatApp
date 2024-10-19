@@ -1,4 +1,11 @@
-/public/*
-!/public/src
+# dependencies - public (frontend)
+/public/node_modules
+/public/.gitignore
+
+# dependencies - server (backend)
 /server/node_modules
-/server/package-lock.json
+
+#dockerization
+/public/DockerFile
+/server/DockerFile
+/docker-compose.yml

@@ -27,14 +27,12 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
     }, [currentChat, currentUser]);
 
     const handleSendMsg = async (msg) => {
-        if (currentUser && currentChat) {
-            await axios.post(sendMessageRoute, {
+        await axios.post(sendMessageRoute, {
                 from: currentUser._id,
                 to: currentChat._id,
                 message: msg,
-            });
-        }
-        socket.current.emit('send-message', {
+        });
+        socket.current.emit('send-msg', {
             to: currentChat._id,
             from: currentUser._id,
             message: msg,
@@ -46,13 +44,12 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
     };
 
     useEffect(() => {
-        
         if (socket.current) {
-            socket.current.on("msg-receive", (msg) => {
-                setArrivalMessage({fromSelf: false, message: msg});
-            });
+          socket.current.on("msg-recieve", (msg) => {
+            setArrivalMessage({ fromSelf: false, message: msg });
+          });
         }
-    }, []);
+      }, []);
 
     useEffect(() => {
         
@@ -79,6 +76,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
                 <h3>{currentChat && currentChat.username}</h3>
               </div>
             </div>
+            <Logout />
           </div>
           <div className="chat-messages">
             {messages.map((message) => (
