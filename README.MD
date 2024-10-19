@@ -6,6 +6,13 @@ Fluffy is a feature-rich chat application built with the MERN stack (MongoDB, Ex
 
 This project was developed to deepen my understanding of full-stack development, focusing on integrating real-time messaging features, handling user authentication, and creating a responsive UI.
 
+Here are some pictures of the login page and the chat page.
+
+![login page](./images/fluffy_login.png)
+
+![chat page](./images/fluffy_chat.png)
+
+
 ## Features
 
 - Real-time messaging with **Socket.IO**
@@ -62,9 +69,11 @@ For Backend (/server directory):
 npm start or npm run start
 ```
 
-Also don't forget to have mongodb running in the background for the backend. 
+#### 4. Ensure MongoDB is running:
+Make sure MongoDB is running in the background to support the backend.
 
-Once the above steps are completed, the website will open on
+5. Access the application:
+Once the servers are running, open your browser and navigate to:
 ```shell
 http://localhost:3000
 ```
