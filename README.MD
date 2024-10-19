@@ -10,6 +10,8 @@ Here are some pictures of the login page and the chat page.
 
 ![login page](./images/fluffy_login.png)
 
+![chat homepage](./images/fluffy_chat_homepage.gif)
+
 ![chat page](./images/fluffy_chat.png)
 
 
