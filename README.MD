@@ -27,9 +27,10 @@ Ensure both are installed, and MongoDB is running in the background.
 
 #### 1. Clone the repository:
 
-   ```bash
+   ```shell
    git clone https://github.com/joyal99/ChatApp.git
    cd ChatApp
+   ```
 
 #### 2. Install Dependencies for both frontend and backend
 
@@ -37,28 +38,34 @@ Make sure to have two terminals open. One should be in the /public directory and
 
 #### Install dependencies for backend
 
-```bash
+```shell
 cd server
 npm install
+```
 
 #### Install dependencies for frontend
 
-```bash
+```shell
 cd public
 npm install
+```
 
 #### 3. Start the development servers:
 
 For Frontend (/public directory):
-```bash
+```shell
 npm start or npm run start
+```
 
 For Backend (/server directory):
-```bash
+```shell
 npm start or npm run start
+```
 
 Also don't forget to have mongodb running in the background for the backend. 
 
 Once the above steps are completed, the website will open on
-```bash
-http://localhost:3000.
+```shell
+http://localhost:3000
+```
+
