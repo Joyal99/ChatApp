@@ -6,6 +6,15 @@ Fluffy is a feature-rich chat application built with the MERN stack (MongoDB, Ex
 
 This project was developed to deepen my understanding of full-stack development, focusing on integrating real-time messaging features, handling user authentication, and creating a responsive UI.
 
+## Features
+
+- Real-time messaging with **Socket.IO**
+- User authentication with **JWT**
+- Avatar selection for user profiles
+- Responsive design using **React** and **Styled Components**
+- RESTful API using **Express** and **MongoDB**
+
+
 ## Installation Guide
 
 ### Requirements
