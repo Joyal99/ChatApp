@@ -7,7 +7,10 @@ const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://joyal99.github.io/ChatApp/",  // Allow requests from your GitHub Pages
+    credentials: true,
+}));
 app.use(express.json());
 
 app.use("/api/auth", userRoutes);
