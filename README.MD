@@ -23,6 +23,9 @@ Here are some pictures of the login page and the chat page.
 - Responsive design using **React** and **Styled Components**
 - RESTful API using **Express** and **MongoDB**
 
+## Reference
+This project was inspired by a tutorial on YouTube:  
+[Build a Chat App with MERN Stack | Full Tutorial](https://www.youtube.com/watch?v=otaQKODEUFs)
 
 ## Installation Guide
 
