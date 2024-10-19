@@ -23,4 +23,23 @@ This project was developed to deepen my understanding of full-stack development,
 
 Ensure both are installed, and MongoDB is running in the background.
 
-> More information to be added to README file in future commits.....
+### Installation Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/joyal99/ChatApp.git
+   cd ChatApp
+
+2. Install Dependencies for both frontend and backend
+
+# Install dependencies for backend
+cd server
+npm install
+
+# Install dependencies for frontend
+cd public
+npm install
+
+3. Start the development servers:
+
